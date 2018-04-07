@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    {% if messages %} {%for message in messages %} {% if message.tags == "error" %}
+    <p style="color: red">{{message}} </p> {% endif %}{% if message.tags == "success" %}
+    <p style="color: green">{{message}} </p> {% endif %} {% endfor %} {% endif %}
+
+
+    <form action="/add" method='post'>
+        {% csrf_token %}
+        <h2>Number 1:</h2>
+        <input type="text" name="number1" placeholder="number">
+        <h1>+</h1>
+        <h2>Number 2:</h2>
+        <input type="text" name="number2" placeholder="number">
+        <input type="submit" name="submit" value='Add'>
+    </form>
+</body>
+
+</html>

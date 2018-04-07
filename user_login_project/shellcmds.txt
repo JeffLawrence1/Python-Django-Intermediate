@@ -1,0 +1,28 @@
+created Users
+
+ran migrations
+
+python manage.py shell
+
+from apps.user_login_app.models import *
+
+User.objects.all()
+
+User.objects.last()
+
+User.objects.create(first_name="bob", last_name="johnson", email_address="lsjdlf@jj.com", age=24)
+
+User.objects.create(first_name="bobbbbbb", last_name="joh", email_address="ffffflf@rj.com", age=47)
+
+User.objects.create(first_name="bobffffffb", last_name="jodsdfsdh", email_address="rrrrrrrflf@rj.com", age=37)
+
+User.objects.first()
+
+User.objects.order_by("first_name")
+
+b= User.objects.get(id=3)
+b.last_name="hhhhhhh"
+b.save()
+
+d= User.objects.get(id=4)
+d.delete()
